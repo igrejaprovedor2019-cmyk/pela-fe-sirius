@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIRIUS - Ficha de Cadastro</title>
+    <title>SIRIUS - Cadastro Oficial</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<div id="splash-screen">
-    <div class="splash-content">
-        <i class="fas fa-star splash-logo"></i>
-        <h1>CLUBE DE DESBRAVADORES SIRIUS</h1>
-        <div class="loader"></div>
-    </div>
-</div>
-
 <div id="modal-aviso" class="modal">
     <div class="modal-content">
         <i class="fas fa-camera pulse-icon"></i>
         <h2>QUASE PRONTO!</h2>
-        <p>O WhatsApp vai abrir. Clique no clipe 📎 e <strong>ANEXE AS FOTOS</strong> do RG e do Cartão SUS!</p>
-        <button id="btn-entendido">ENTENDIDO, ENVIAR</button>
+        <p>O WhatsApp vai abrir. Clique no clipe 📎 e <strong>ANEXE AS FOTOS</strong> do RG e do Cartão SUS que você tirou!</p>
+        <button id="btn-entendido">ENTENDIDO, ENVIAR AGORA</button>
     </div>
 </div>
 
-<div class="container" id="main-content" style="display:none;">
+<div class="container" id="main-content">
     <header>
         <p class="title-club">SIRIUS</p>
         <h1>FICHA DE CADASTRO</h1>
@@ -72,20 +64,19 @@
             </div>
             <div class="input-group"><label>E-mail</label><input type="email" name="Email"></div>
             <div class="input-group"><label>Endereço</label><input type="text" name="Endereco"></div>
-            <div class="grid-2">
-                <div class="input-group"><label>Número</label><input type="text" name="Numero"></div>
-                <div class="input-group"><label>Bairro</label><input type="text" name="Bairro"></div>
-            </div>
             <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
         </div>
 
         <div class="form-step">
-            <h2>🏠 ENDEREÇO E ADICIONAIS</h2>
+            <h2>🏠 ENDEREÇO (CONT.)</h2>
+            <div class="grid-2">
+                <div class="input-group"><label>Número</label><input type="text" name="Numero"></div>
+                <div class="input-group"><label>Bairro</label><input type="text" name="Bairro"></div>
+            </div>
             <div class="grid-2">
                 <div class="input-group"><label>CEP</label><input type="text" name="CEP"></div>
                 <div class="input-group"><label>Cidade</label><input type="text" name="Cidade"></div>
             </div>
-            <div class="input-group"><label>Estado</label><input type="text" name="Estado"></div>
             <hr>
             <h2>👕 INFORMAÇÕES ADICIONAIS</h2>
             <div class="input-group"><label>Tamanho da Camiseta</label><input type="text" name="TamanhoCamiseta"></div>
@@ -97,10 +88,10 @@
         <div class="form-step">
             <h2>👨‍👩‍👧 RESPONSÁVEIS</h2>
             <div class="input-group"><label>Nome do Pai</label><input type="text" name="PaiNome"></div>
-            <div class="input-group"><label>Celular do Pai</label><input type="tel" name="PaiTel"></div>
+            <div class="input-group"><label>E-mail / Tel do Pai</label><input type="text" name="PaiContato"></div>
             <hr>
             <div class="input-group"><label>Nome da Mãe</label><input type="text" name="MaeNome"></div>
-            <div class="input-group"><label>Celular da Mãe</label><input type="tel" name="MaeTel"></div>
+            <div class="input-group"><label>E-mail / Tel da Mãe</label><input type="text" name="MaeContato"></div>
             <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
         </div>
 
@@ -113,7 +104,7 @@
             </div>
             <hr>
             <h2>🎓 ESCOLARIDADE</h2>
-            <div class="input-group"><label>Nível</label><select name="EscolaridadeNivel"><option>Educação Infantil</option><option>Ensino Fundamental</option><option>Ensino Médio</option><option>Ensino Técnico</option><option>Ensino Superior</option><option>Pós-Graduação</option><option>Mestrado</option><option>Doutorado</option></select></div>
+            <div class="input-group"><label>Nível</label><select name="EscolaridadeNivel"><option>Educação Infantil</option><option>Ensino Fundamental</option><option>Ensino Médio</option><option>Ensino Técnico</option><option>Ensino Superior</option><option>Pós-Graduação</option></select></div>
             <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
         </div>
 
@@ -121,4 +112,64 @@
             <h2>🎓 ESCOLARIDADE (CONT.)</h2>
             <div class="input-group"><label>Status</label><select name="EscolaStatus"><option>Cursando</option><option>Completo</option><option>Incompleto</option></select></div>
             <div class="input-group"><label>Área de Conhecimento</label><input type="text" name="AreaConhecimento"></div>
-            <div class="input-group"><label>Instituição de Ensino</label><input type="text
+            <div class="input-group"><label>Nome do Curso / Instituição</label><input type="text" name="Instituicao"></div>
+            <hr>
+            <h2>🏥 PROFISSÃO (SAÚDE)</h2>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="ProfSaude" value="Médico"> Médico</label>
+                <label><input type="checkbox" name="ProfSaude" value="Enfermeiro"> Enfermeiro</label>
+                <label><input type="checkbox" name="ProfSaude" value="Socorrista"> Socorrista</label>
+            </div>
+            <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
+        </div>
+
+        <div class="form-step">
+            <h2>🩺 FICHA MÉDICA</h2>
+            <div class="input-group"><label>Nº do Cartão SUS</label><input type="text" name="SUS"></div>
+            <div class="grid-2">
+                <div class="input-group"><label>Tipo Sanguíneo</label><input type="text" name="Sangue"></div>
+                <div class="input-group"><label>Fator RH</label><select name="RH"><option>Positivo</option><option>Negativo</option></select></div>
+            </div>
+            <div class="upload-area">
+                <p>📷 FOTO DO CARTÃO SUS</p>
+                <input type="file" accept="image/*" capture="camera">
+            </div>
+            <hr>
+            <h3>🦠 DOENÇAS CONTRAÍDAS</h3>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="Doencas" value="Catapora"> Catapora</label>
+                <label><input type="checkbox" name="Doencas" value="Malária"> Malária</label>
+                <label><input type="checkbox" name="Doencas" value="Dengue"> Dengue</label>
+                <label><input type="checkbox" name="Doencas" value="H1N1"> H1N1</label>
+            </div>
+            <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
+        </div>
+
+        <div class="form-step">
+            <h2>⚠️ CONDIÇÕES E SAÚDE</h2>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="Problema" value="Cardíaco"> Cardíaco</label>
+                <label><input type="checkbox" name="Problema" value="Renal"> Renal</label>
+                <label><input type="checkbox" name="Problema" value="Diabetes"> Diabetes</label>
+            </div>
+            <div class="input-group" style="margin-top:10px;"><label>Uso contínuo de medicação?</label><select name="UsoMedio"><option>Não</option><option>Sim</option></select></div>
+            <div class="input-group"><label>Alergias / Histórico:</label><textarea name="Alergias" rows="3"></textarea></div>
+            <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
+        </div>
+
+        <div class="form-step">
+            <h2>✍️ DECLARAÇÃO FINAL</h2>
+            <div class="input-group"><label>Local e Data</label><input type="text" name="LocalData" value="Manaus, 2026"></div>
+            <div class="input-group"><label>Assinatura Responsável *</label><input type="text" name="Assinatura" required></div>
+            <div class="input-group"><label>CPF Responsável</label><input type="text" name="CPF_Resp"></div>
+            <div class="btn-group">
+                <button type="button" class="btn-prev">Voltar</button>
+                <button type="submit" class="btn-submit">FINALIZAR E ENVIAR</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
