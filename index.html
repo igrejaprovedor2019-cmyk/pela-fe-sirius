@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube Sirius - Ficha Completa</title>
+    <title>SIRIUS - Ficha de Cadastro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,10 +19,10 @@
 
 <div id="modal-aviso" class="modal">
     <div class="modal-content">
-        <i class="fas fa-camera pulse-icon"></i>
-        <h2>QUASE PRONTO!</h2>
-        <p>No WhatsApp, clique no 📎 (clipe) e <strong>ANEXE AS FOTOS</strong> do RG e do Cartão SUS que você acabou de tirar!</p>
-        <button id="btn-entendido">ENTENDIDO, ABRIR WHATSAPP</button>
+        <i class="fas fa-exclamation-circle pulse-icon"></i>
+        <h2>ATENÇÃO!</h2>
+        <p>O WhatsApp vai abrir. <strong>NÃO ESQUEÇA</strong> de anexar as fotos do <strong>RG (Frente/Verso)</strong> e do <strong>CARTÃO SUS</strong> que você tirou!</p>
+        <button id="btn-entendido">ENTENDIDO, ENVIAR AGORA</button>
     </div>
 </div>
 
@@ -45,7 +45,7 @@
 
     <form id="multiStepForm">
         <div class="form-step active">
-            <h2><i class="fas fa-user"></i> Dados Pessoais</h2>
+            <h2><i class="fas fa-user"></i> 1. Dados Pessoais</h2>
             <div class="input-group"><label>Nome Completo *</label><input type="text" name="Nome" required></div>
             <div class="grid-2">
                 <div class="input-group"><label>Função</label><input type="text" name="Funcao"></div>
@@ -53,8 +53,8 @@
             </div>
             <div class="grid-3">
                 <div class="input-group"><label>Sexo</label><select name="Sexo"><option>Feminino</option><option>Masculino</option></select></div>
-                <div class="input-group"><label>Estado Civil</label><input type="text" name="EstadoCivil"></div>
-                <div class="input-group"><label>Batizado (IASD)</label><select name="Batizado"><option>Sim</option><option>Não</option></select></div>
+                <div class="input-group"><label>Estado Civil</label><input type="text" name="Estado_Civil"></div>
+                <div class="input-group"><label>Tamanho Camiseta</label><input type="text" name="Camiseta"></div>
             </div>
             <div class="grid-3">
                 <div class="input-group"><label>RG</label><input type="text" name="RG"></div>
@@ -62,15 +62,14 @@
                 <div class="input-group"><label>Órgão Expedidor</label><input type="text" name="Orgao"></div>
             </div>
             <div class="upload-area">
-                <p><i class="fas fa-camera"></i> FOTO DO RG (FRENTE E VERSO)</p>
-                <input type="file" name="FOTO_RG_FRENTE" accept="image/*" capture="camera">
-                <input type="file" name="FOTO_RG_VERSO" accept="image/*" capture="camera">
+                <p><i class="fas fa-camera"></i> TIRAR FOTO DO RG (FRENTE E VERSO)</p>
+                <div class="grid-2">
+                    <input type="file" name="RG_FRENTE" accept="image/*" capture="camera">
+                    <input type="file" name="RG_VERSO" accept="image/*" capture="camera">
+                </div>
             </div>
-            <div class="btn-group"><button type="button" class="btn-next">Próximo</button></div>
-        </div>
-
-        <div class="form-step">
-            <h2><i class="fas fa-phone"></i> Contato e Endereço</h2>
+            <hr>
+            <h2><i class="fas fa-phone"></i> 2. Contato e Endereço</h2>
             <div class="grid-2">
                 <div class="input-group"><label>Telefone</label><input type="tel" name="Telefone"></div>
                 <div class="input-group"><label>Celular *</label><input type="tel" name="Celular" required></div>
@@ -80,98 +79,91 @@
                 <div class="input-group" style="grid-column: span 2;"><label>Endereço</label><input type="text" name="Rua"></div>
                 <div class="input-group"><label>Nº</label><input type="text" name="Numero"></div>
             </div>
-            <hr>
-            <h3>Responsáveis</h3>
-            <div class="grid-2">
-                <div class="input-group"><label>Pai</label><input type="text" name="Pai"></div>
-                <div class="input-group"><label>Cel do Pai</label><input type="tel" name="Pai_Tel"></div>
-                <div class="input-group"><label>Mãe</label><input type="text" name="Mae"></div>
-                <div class="input-group"><label>Cel da Mãe</label><input type="tel" name="Mae_Tel"></div>
+            <div class="grid-3">
+                <div class="input-group"><label>Bairro</label><input type="text" name="Bairro"></div>
+                <div class="input-group"><label>CEP</label><input type="text" name="CEP"></div>
+                <div class="input-group"><label>Cidade</label><input type="text" name="Cidade"></div>
             </div>
-            <div class="btn-group">
-                <button type="button" class="btn-prev">Voltar</button>
-                <button type="button" class="btn-next">Próximo</button>
-            </div>
+            <div class="btn-group"><button type="button" class="btn-next">Próximo</button></div>
         </div>
 
         <div class="form-step">
-            <h2><i class="fas fa-graduation-cap"></i> Escolaridade e Profissão</h2>
-            <div class="input-group">
-                <label>Nível</label>
-                <select name="Escolaridade">
-                    <option>Educação Infantil</option><option>Ensino Fundamental</option>
-                    <option>Ensino Médio</option><option>Ensino Técnico</option>
-                    <option>Ensino Superior</option><option>Pós-Graduação</option>
-                </select>
-            </div>
+            <h2><i class="fas fa-users"></i> 3. Responsáveis</h2>
+            <div class="input-group"><label>Nome do Pai</label><input type="text" name="Pai_Nome"></div>
             <div class="grid-2">
-                <div class="input-group"><label>Status</label><select name="Status_Escola"><option>Cursando</option><option>Completo</option><option>Incompleto</option></select></div>
-                <div class="input-group"><label>Área</label><input type="text" name="Area_Conhecimento"></div>
+                <div class="input-group"><label>E-mail Pai</label><input type="email" name="Pai_Email"></div>
+                <div class="input-group"><label>Tel/Cel Pai</label><input type="tel" name="Pai_Tel"></div>
+            </div>
+            <div class="input-group"><label>Nome da Mãe</label><input type="text" name="Mae_Nome"></div>
+            <div class="grid-2">
+                <div class="input-group"><label>E-mail Mãe</label><input type="email" name="Mae_Email"></div>
+                <div class="input-group"><label>Tel/Cel Mãe</label><input type="tel" name="Mae_Tel"></div>
             </div>
             <hr>
-            <h3>Se for da Área da Saúde:</h3>
-            <div class="checkbox-grid">
-                <label><input type="checkbox" name="Saude_Prof" value="Médico"> Médico</label>
-                <label><input type="checkbox" name="Saude_Prof" value="Dentista"> Dentista</label>
-                <label><input type="checkbox" name="Saude_Prof" value="Enfermeiro"> Enfermeiro</label>
-                <label><input type="checkbox" name="Saude_Prof" value="Socorrista"> Socorrista</label>
+            <h2><i class="fas fa-graduation-cap"></i> 4. Escolaridade</h2>
+            <div class="grid-2">
+                <div class="input-group"><label>Nível</label><select name="Nivel_Escolar"><option>Educação Infantil</option><option>Ensino Fundamental</option><option>Ensino Médio</option><option>Ensino Técnico</option><option>Ensino Superior</option><option>Pós-Graduação</option><option>Mestrado</option><option>Doutorado</option></select></div>
+                <div class="input-group"><label>Status</label><select name="Status_Escolar"><option>Cursando</option><option>Completo</option><option>Incompleto</option></select></div>
             </div>
-            <div class="input-group"><label>Nº Registro/Órgão</label><input type="text" name="Doc_Profissional"></div>
-            <div class="btn-group">
-                <button type="button" class="btn-prev">Voltar</button>
-                <button type="button" class="btn-next">Próximo</button>
+            <div class="input-group"><label>Área de Conhecimento</label><select name="Area_Estudo"><option>Ciências Exatas</option><option>Engenharia</option><option>Ciências Agrárias</option><option>Ciências Humanas</option><option>Linguística/Letras/Artes</option><option>Ciências Biológicas</option><option>Ciências Sociais</option><option>Ciências da Saúde</option><option>Tecnologia</option></select></div>
+            <div class="grid-2">
+                <div class="input-group"><label>Nome do Curso</label><input type="text" name="Curso"></div>
+                <div class="input-group"><label>Instituição</label><input type="text" name="Escola"></div>
             </div>
+            <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
         </div>
 
         <div class="form-step">
-            <h2><i class="fas fa-heartbeat"></i> Ficha Médica</h2>
+            <h2><i class="fas fa-notes-medical"></i> 5. Ficha Médica</h2>
             <div class="grid-2">
                 <div class="input-group"><label>Nº Cartão SUS</label><input type="text" name="SUS"></div>
-                <div class="input-group"><label>Plano de Saúde?</label><input type="text" name="Plano" placeholder="Nome do Plano"></div>
+                <div class="input-group"><label>Tipagem Sanguínea</label><input type="text" name="Sangue"></div>
+            </div>
+            <div class="grid-2">
+                <div class="input-group"><label>Plano de Saúde?</label><select name="Tem_Plano"><option>Não</option><option>Sim</option></select></div>
+                <div class="input-group"><label>Fator RH</label><select name="RH"><option>Positivo</option><option>Negativo</option></select></div>
             </div>
             <div class="upload-area">
-                <p><i class="fas fa-camera"></i> FOTO CARTÃO SUS</p>
-                <input type="file" name="FOTO_SUS_FRENTE" accept="image/*" capture="camera">
+                <p><i class="fas fa-camera"></i> TIRAR FOTO CARTÃO SUS (FRENTE)</p>
+                <input type="file" name="SUS_FRENTE" accept="image/*" capture="camera">
             </div>
-            <h3>Doenças contraídas:</h3>
+            <hr>
+            <h3>Doenças já contraídas:</h3>
             <div class="checkbox-grid">
                 <label><input type="checkbox" name="Doencas" value="Catapora"> Catapora</label>
                 <label><input type="checkbox" name="Doencas" value="Malária"> Malária</label>
+                <label><input type="checkbox" name="Doencas" value="Hepatite"> Hepatite</label>
                 <label><input type="checkbox" name="Doencas" value="Covid"> Covid-19</label>
                 <label><input type="checkbox" name="Doencas" value="Dengue"> Dengue</label>
+                <label><input type="checkbox" name="Doencas" value="Sarampo"> Sarampo</label>
+                <label><input type="checkbox" name="Doencas" value="Pneumonia"> Pneumonia</label>
+                <label><input type="checkbox" name="Doencas" value="Caxumba"> Caxumba</label>
+                <label><input type="checkbox" name="Doencas" value="H1N1"> H1N1</label>
             </div>
-            <hr>
-            <div class="grid-2">
-                <div class="input-group"><label>Diabetes?</label><select name="Diabetes"><option>Não</option><option>Sim</option></select></div>
-                <div class="input-group"><label>Cardíaco?</label><select name="Cardiaco"><option>Não</option><option>Sim</option></select></div>
-            </div>
-            <div class="input-group"><label>Alergias / Medicamentos:</label><textarea name="Alergias_Med" rows="2"></textarea></div>
-            <div class="btn-group">
-                <button type="button" class="btn-prev">Voltar</button>
-                <button type="button" class="btn-next">Próximo</button>
-            </div>
+            <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
         </div>
 
         <div class="form-step">
-            <h2><i class="fas fa-history"></i> Histórico e Finalização</h2>
-            <div class="checkbox-grid">
-                <label><input type="checkbox" name="Hist" value="Transfusão"> Transfusão Sangue</label>
-                <label><input type="checkbox" name="Hist" value="Cirurgia"> Cirurgia</label>
-                <label><input type="checkbox" name="Hist" value="Internação"> Internação (5 anos)</label>
+            <h2><i class="fas fa-pills"></i> 6. Condições e Alergias</h2>
+            <div class="grid-2">
+                <div class="input-group"><label>Prob. Cardíaco?</label><select name="Cardiaco"><option>Não</option><option>Sim</option></select></div>
+                <div class="input-group"><label>Prob. Renal?</label><select name="Renal"><option>Não</option><option>Sim</option></select></div>
+                <div class="input-group"><label>Prob. Psicológico?</label><select name="Psicologico"><option>Não</option><option>Sim</option></select></div>
+                <div class="input-group"><label>Diabetes?</label><select name="Diabetes"><option>Não</option><option>Sim</option></select></div>
             </div>
-            <div class="input-group"><label>Deficiência / Condição Especial:</label><input type="text" name="Deficiencia"></div>
+            <div class="input-group"><label>Uso contínuo de medicamentos?</label><select name="Uso_Remedio"><option>Não</option><option>Sim</option></select></div>
+            <div class="input-group"><label>Quais Alergias:</label><textarea name="Alergias" rows="2"></textarea></div>
             <hr>
-            <div class="input-group"><label>Local e Data</label><input type="text" name="LocalData" required></div>
-            <div class="input-group"><label>Assinatura Responsável *</label><input type="text" name="Assinatura" required></div>
-            <div class="input-group"><label>CPF do Responsável</label><input type="text" name="CPF_Resp"></div>
-            <div class="btn-group">
-                <button type="button" class="btn-prev">Voltar</button>
-                <button type="submit" class="btn-submit">ENVIAR CADASTRO</button>
+            <h2><i class="fas fa-ambulance"></i> 7. Emergência</h2>
+            <div class="input-group"><label>Nome do Contato</label><input type="text" name="Emergencia_Nome"></div>
+            <div class="grid-2">
+                <div class="input-group"><label>Parentesco</label><input type="text" name="Parentesco"></div>
+                <div class="input-group"><label>Telefone</label><input type="tel" name="Emergencia_Tel"></div>
             </div>
+            <div class="btn-group"><button type="button" class="btn-prev">Voltar</button><button type="button" class="btn-next">Próximo</button></div>
         </div>
-    </form>
-</div>
 
-<script src="script.js"></script>
-</body>
-</html>
+        <div class="form-step">
+            <h2><i class="fas fa-history"></i> 8. Histórico Médico</h2>
+            <div class="checkbox-grid">
+                <label>
